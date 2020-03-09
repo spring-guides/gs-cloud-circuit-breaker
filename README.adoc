@@ -7,7 +7,7 @@
 :toc:
 :icons: font
 :source-highlighter: prettify
-:project_id: gs-spring-cloud-circuitbreaker
+:project_id: gs-cloud-circuitbreaker
 This guide walks you through the process of applying circuit breakers to potentially-failing method calls using Spring Cloud Circuit Breaker.
 
 == What you'll build
