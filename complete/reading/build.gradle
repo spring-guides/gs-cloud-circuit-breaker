@@ -31,16 +31,21 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j')
-	compile('org.springframework.boot:spring-boot-starter-webflux')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	implementation('org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j')
+	implementation('org.springframework.boot:spring-boot-starter-webflux')
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+ext {
+	set('springCloudVersion', "2020.0.3")
 }
 
 dependencyManagement {
 	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR1"
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
 }
+
 
 eclipse {
 	classpath {

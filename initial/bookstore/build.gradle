@@ -31,8 +31,8 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-webflux')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	implementation('org.springframework.boot:spring-boot-starter-webflux')
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
 
