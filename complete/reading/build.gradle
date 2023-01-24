@@ -1,43 +1,26 @@
-buildscript {
-	ext {
-		springBootVersion = '3.0.0'
-	}
-	repositories {
-		mavenCentral()
-		maven { url 'https://repo.spring.io/milestone' }
-		maven { url 'https://repo.spring.io/snapshot' }
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.2'
+	id 'io.spring.dependency-management' version '1.1.0'
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-
-bootJar {
-	baseName = 'reading'
-	version = '0.0.1-SNAPSHOT'
-}
-sourceCompatibility = 17
-targetCompatibility = 17
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
 
 repositories {
 	mavenCentral()
 }
 
-
-dependencies {
-	implementation('org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j')
-	implementation('org.springframework.boot:spring-boot-starter-webflux')
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
+ext {
+	set('springCloudVersion', "2022.0.0")
 }
 
-ext {
-	set('springCloudVersion', "2020.0.3")
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
 }
 
 dependencyManagement {
@@ -46,10 +29,6 @@ dependencyManagement {
 	}
 }
 
-
-eclipse {
-	classpath {
-		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
-		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
-	}
+tasks.named('test') {
+	useJUnitPlatform()
 }
