@@ -1,5 +1,5 @@
 :spring_version: current
-:spring_boot_version: 3.0.2
+:spring_boot_version: 3.1.0
 :Controller: https://docs.spring.io/spring/docs/{spring_version}/javadoc-api/org/springframework/stereotype/Controller.html
 :DispatcherServlet: https://docs.spring.io/spring/docs/{spring_version}/javadoc-api/org/springframework/web/servlet/DispatcherServlet.html
 :SpringApplication: https://docs.spring.io/spring-boot/docs/{spring_boot_version}/api/org/springframework/boot/SpringApplication.html
@@ -23,8 +23,8 @@ include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/
 [[scratch]]
 == Starting with Spring Initializr
 
-:bookstore-link: https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.0.2&packaging=jar&jvmVersion=17&groupId=com.example&artifactId=spring-cloud-circuit-breaker-bookstore&name=spring-cloud-circuit-breaker-bookstore&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.spring-cloud-circuit-breaker-bookstore&dependencies=webflux
-:reading-link: https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.0.2&packaging=jar&jvmVersion=17&groupId=com.example&artifactId=spring-cloud-circuit-breaker-reading&name=spring-cloud-circuit-breaker-reading&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.spring-cloud-circuit-breaker-reading&dependencies=webflux,cloud-resilience4j
+:bookstore-link: https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.1.0&packaging=jar&jvmVersion=17&groupId=com.example&artifactId=spring-cloud-circuit-breaker-bookstore&name=spring-cloud-circuit-breaker-bookstore&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.spring-cloud-circuit-breaker-bookstore&dependencies=webflux
+:reading-link: https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.1.0&packaging=jar&jvmVersion=17&groupId=com.example&artifactId=spring-cloud-circuit-breaker-reading&name=spring-cloud-circuit-breaker-reading&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.spring-cloud-circuit-breaker-reading&dependencies=webflux,cloud-resilience4j
 
 You can use this {bookstore-link}[pre-initialized project] (for the bookstore application) or this {reading-link}[pre-initialized project] (for the reading application) and click Generate to download a ZIP file. This project is configured to fit the examples in this tutorial.
 
