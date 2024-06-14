@@ -1,0 +1,58 @@
+name: CI Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build Main Branch
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build Initial Reading with Maven
+        working-directory: ./initial/reading
+        run: ./mvnw --batch-mode clean package
+
+      - name: Build Initial Reading with Gradle
+        working-directory: ./initial/reading
+        run: ./gradlew build
+      
+      - name: Build Initial Bookstore with Maven
+        working-directory: ./initial/bookstore
+        run: ./mvnw --batch-mode clean package
+
+      - name: Build Initial Bookstore with Gradle
+        working-directory: ./initial/bookstore
+        run: ./gradlew build
+
+
+      - name: Build Complete Reading with Maven
+        working-directory: ./complete/reading
+        run: ./mvnw --batch-mode clean package
+
+      - name: Build Complete Reading with Gradle
+        working-directory: ./complete/reading
+        run: ./gradlew build
+      
+      - name: Build Complete Bookstore with Maven
+        working-directory: ./complete/bookstore
+        run: ./mvnw --batch-mode clean package
+
+      - name: Build Complete Bookstore with Gradle
+        working-directory: ./complete/bookstore
+        run: ./gradlew build
