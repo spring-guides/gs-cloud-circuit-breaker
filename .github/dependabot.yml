@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "maven"
-    directory: "/"
+    directory: "/initial/bookstore/"
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-patch"]
@@ -10,7 +10,7 @@ updates:
     target-branch: "main"
 
   - package-ecosystem: "gradle"
-    directory: "/" 
+    directory: "/initial/bookstore/" 
     ignore:
       - dependency-name: "org.springframework.*"
         update-types: ["version-update:semver-patch"]
@@ -18,6 +18,62 @@ updates:
       interval: "monthly"
     target-branch: "main"
 
+  - package-ecosystem: "maven"
+    directory: "/initial/reading/"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
+    schedule:
+      interval: "monthly"
+    target-branch: "main"
+
+  - package-ecosystem: "gradle"
+    directory: "/initial/reading/" 
+    ignore:
+      - dependency-name: "org.springframework.*"
+        update-types: ["version-update:semver-patch"]
+    schedule:
+      interval: "monthly"
+    target-branch: "main"
+
+
+  - package-ecosystem: "maven"
+    directory: "/complete/bookstore/"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
+    schedule:
+      interval: "monthly"
+    target-branch: "main"
+
+  - package-ecosystem: "gradle"
+    directory: "/complete/bookstore/" 
+    ignore:
+      - dependency-name: "org.springframework.*"
+        update-types: ["version-update:semver-patch"]
+    schedule:
+      interval: "monthly"
+    target-branch: "main"
+
+  - package-ecosystem: "maven"
+    directory: "/complete/reading/"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
+    schedule:
+      interval: "monthly"
+    target-branch: "main"
+
+  - package-ecosystem: "gradle"
+    directory: "/complete/reading/" 
+    ignore:
+      - dependency-name: "org.springframework.*"
+        update-types: ["version-update:semver-patch"]
+    schedule:
+      interval: "monthly"
+    target-branch: "main"
+    
+    
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
