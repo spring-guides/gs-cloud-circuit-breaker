@@ -13,7 +13,7 @@ repositories {
 }
 
 ext {
-	springCloudVersion = '2023.0.2'
+	springCloudVersion = '2024.0.0'
 }
 
 dependencies {
